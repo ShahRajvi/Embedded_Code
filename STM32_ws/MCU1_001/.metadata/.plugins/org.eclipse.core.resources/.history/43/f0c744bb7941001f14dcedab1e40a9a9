@@ -1,0 +1,44 @@
+/*
+ * stm32f446xx_RCC_driver.c
+ *
+ *  Created on: July 13, 2024
+ *      Author: RShah23
+ */
+
+#include "stm32f446xx_RCC_driver.h"
+
+uint16_t AHB_Prescaler[8] = {2,4, 8, 16, 64, 128, 256, 512};
+uint8_t APBx_Prescaler[4] = {2, 4, 8, 16};
+
+
+/*****************************************************************
+ * @fn          - RCC_GetPCLK1Value
+ *
+ * @brief       - This function returns PClock 1 value
+ *
+ *
+ * @return      - PClock 1 value
+ *
+ * @Note        - None
+ *
+ *****************************************************************/
+
+uint32_t RCC_GetPCLK1Value(){
+
+}
+
+
+/*****************************************************************
+ * @fn          - RCC_GetPCLK2Value
+ *
+ * @brief       - This function returns PClock 2 value
+ *
+ *
+ * @return      - PClock 2 value
+ *
+ * @Note        - None
+ *
+ *****************************************************************/
+uint32_t RCC_GetPCLK2Value(){
+
+}

@@ -28,3 +28,78 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2024-07-28 19:30:59.923
 !MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 84000000; div: 42
+!SESSION 2024-07-29 17:17:32.415 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-07-29 17:17:41.870
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-07-29 17:17:41.872
+!MESSAGE Log4j2 initialized with config file C:\Users\rajvi\OneDrive\Documents\00_Projects\Embedded_Code\RTOS_ws\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-07-29 17:17:47.087
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-07-29 17:31:34.197
+!MESSAGE Indexed 'FreeRTOS_Project' (36 sources, 155 headers) in 2.93 sec: 16,428 declarations; 76,417 references; 1 unresolved inclusions; 201 syntax errors; 252 unresolved names (0.27%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-07-29 17:32:15.990
+!MESSAGE Indexed 'FreeRTOS_Project' (36 sources, 155 headers) in 1.82 sec: 16,428 declarations; 76,417 references; 1 unresolved inclusions; 201 syntax errors; 252 unresolved names (0.27%)
+!SESSION 2024-07-29 17:44:37.534 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-07-29 17:44:42.742
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-07-29 17:44:42.743
+!MESSAGE Log4j2 initialized with config file C:\Users\rajvi\OneDrive\Documents\00_Projects\Embedded_Code\RTOS_ws\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-07-29 17:44:47.908
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-07-29 17:45:21.939 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-07-29 17:45:27.071
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-07-29 17:45:27.072
+!MESSAGE Log4j2 initialized with config file C:\Users\rajvi\OneDrive\Documents\00_Projects\Embedded_Code\RTOS_ws\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-07-29 17:45:32.918
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-07-29 17:47:00.569
+!MESSAGE Indexed 'FreeRTOS_Project' (36 sources, 155 headers) in 3.55 sec: 16,428 declarations; 76,419 references; 1 unresolved inclusions; 201 syntax errors; 250 unresolved names (0.27%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-07-29 17:47:57.280
+!MESSAGE Indexed 'FreeRTOS_Project' (36 sources, 155 headers) in 2.05 sec: 16,428 declarations; 76,419 references; 1 unresolved inclusions; 201 syntax errors; 250 unresolved names (0.27%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-07-29 17:48:26.407
+!MESSAGE Indexed 'FreeRTOS_Project' (36 sources, 155 headers) in 1.56 sec: 16,428 declarations; 76,419 references; 1 unresolved inclusions; 201 syntax errors; 250 unresolved names (0.27%)
+!SESSION 2024-08-03 21:08:16.578 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-08-03 21:08:26.827
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-08-03 21:08:26.829
+!MESSAGE Log4j2 initialized with config file C:\Users\rajvi\OneDrive\Documents\00_Projects\Embedded_Code\RTOS_ws\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-08-03 21:08:34.687
+!MESSAGE Started RMI Server, listening on port 41337

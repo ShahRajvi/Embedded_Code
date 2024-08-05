@@ -1,0 +1,2 @@
+../drivers/Src/stm32f446xx_I2C_drivers.c:24:6:I2C_PeriClockControl	9
+../drivers/Src/stm32f446xx_I2C_drivers.c:63:6:I2C_DeInit	4

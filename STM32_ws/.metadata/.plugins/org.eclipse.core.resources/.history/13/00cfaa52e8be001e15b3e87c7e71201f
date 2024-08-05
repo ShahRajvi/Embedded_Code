@@ -1,0 +1,68 @@
+/*
+ * stm32f446xx_gpio__driver.h
+ *
+ *  Created on: Jan 28, 2024
+ *      Author: RShah23
+ */
+
+#ifndef INC_STM32F446XX_GPIO__DRIVER_H_
+#define INC_STM32F446XX_GPIO__DRIVER_H_
+
+#include "stm32f446xx.h"
+
+typedef struct{
+	uint8_t GPIO_PinNumber;
+	uint8_t GPIO_PinMode;
+	uint8_t GPIO_PinSpeed;
+	uint8_t GPIO_PinPuPdControl;
+	uint8_t GPIO_PinOPType;
+	uint8_t GPIO_PinAltFunMode;
+}GPIO_PinConfig_t;
+
+
+/*
+ * This is a Handle structure for a GPIO pin
+ */
+
+typedef struct{
+	//pointer to hold the base address of the GPIO peripheral
+	GPIO_RegDef_t *pGPIOx; 				// This hold the base address of the GPIO port to which the pin belongs.
+	GPIO_PinConfig_t GPIO_PinConfig; 	//This holds GPIO pin configuration settings.
+
+}GPIO_Handle_t;
+
+/***********************************************************************************************************
+ * APIs supported by this driver
+ * For more information check the function definition
+ ***********************************************************************************************************/
+/*
+ * Init and De-Init Port
+ */
+void GPIO_Init(void);
+void GPIO_DeInit(void);
+/*
+ * Peripheral Clock Setup
+ */
+
+void GPIO_PeriClockControl(void);
+
+/*
+ * Data Read-Write
+ */
+
+void GPIO_ReadFromInputPin(void);
+void GPIO_ReadFromInputPort(void);
+
+void GPIO_WriteToInputPin(void);
+void GPIO_WriteToInputPort(void);
+
+void GPIO_ToggleOutputPin(void);
+
+/*
+ * IRQ Configuration and ISR Handling
+ */
+
+void GPIO_IRQConfig(void);
+void GPIO_IRQHandling(void);
+
+#endif /* INC_STM32F446XX_GPIO__DRIVER_H_ */

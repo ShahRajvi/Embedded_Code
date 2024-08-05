@@ -1,0 +1,16 @@
+/*
+ * stm32f446xx_RCC_driver.c
+ *
+ *  Created on: July 13, 2024
+ *      Author: RShah23
+ */
+
+#include "stm32f446xx_USART_driver.h"
+
+
+uint32_t RCC_GetPCLK1Value(){
+
+}
+uint32_t RCC_GetPCLK2Value(){
+
+}

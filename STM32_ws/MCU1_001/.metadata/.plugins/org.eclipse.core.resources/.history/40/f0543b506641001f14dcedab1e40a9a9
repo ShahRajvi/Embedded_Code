@@ -1,0 +1,277 @@
+/*
+ * stm32f446xx_USART_driver.c
+ *
+ *  Created on: June 28, 2024
+ *      Author: RShah23
+ */
+
+
+
+
+#include "stm32f446xx_USART_driver.h"
+
+
+/*********************************************************************
+ * @fn      		  - USART_Init
+ *
+ * @brief             -	This function initializes the USART communication
+ *
+ * @param[in]         - *pUSARTHandle
+ *
+ *
+ * @Note              -
+
+ */
+
+void USART_Init(USART_Handle_t *pUSARTHandle){
+	uint32_t tempreg = 0; //temporary variable
+
+	/******* CR1 Configurations **********/
+
+	// Clock enable for given USART peripheral
+
+	USART_PeriClockControl(pUSARTHandle->pUSARTx, ENABLE);
+
+	/*
+	 * Enable USART Tx and Rx engines according to the USART_Mode configuration item
+	 */
+
+	if(pUSARTHandle->USART_Config.USART_Mode == USART_MODE_ONLY_TX){
+		//CR1: Set bit 3 and clear bit 2 to enable transmitter bit field
+		tempreg |= (1 << USART_CR1_TE);
+		//tempreg &= (0 << USART_CR1_TE);
+	}
+	if(pUSARTHandle->USART_Config.USART_Mode == USART_MODE_ONLY_RX){
+		//CR1: Set bit 2 and clear bit 3 to enable receiver bit field
+		tempreg |= (1 << USART_CR1_RE);
+		//tempreg &= (0 << USART_CR1_TE);
+	}
+	if(pUSARTHandle->USART_Config.USART_Mode == USART_MODE_TXRX){
+		//CR1: Set bits 2 and 3 to enable transmitter and receiver bit fields
+		tempreg |= (1 << USART_CR1_RE);
+		tempreg |= (1 << USART_CR1_TE);
+	}
+
+	/*
+	 * Word length configuration (Bit to be changed: USART_CR1_M)
+	 */
+	tempreg |= (pUSARTHandle->USART_Config.USART_WordLength << USART_CR1_M); //CR1_M bit set or reset for word length
+
+	/*
+	 * Parity Control
+	 * Bits to be config.: USART_CR1_PCE, USART_CR1_PS
+	 */
+
+	if(pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_EN_EVEN){
+		// Even parity is selected by default.
+		tempreg |= (1 << USART_CR1_PCE);
+	}
+	else if (pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_EN_ODD){
+		tempreg |= (1 << USART_CR1_PCE);
+		tempreg |= (1 << USART_CR1_PS);
+	}
+
+	/*
+	 * Programming CR1 Register
+	 */
+	pUSARTHandle->pUSARTx->CR1 = tempreg;
+
+	/*****************************************************************
+	 * 						Configuring CR2
+	 *****************************************************************/
+
+	tempreg = 0;
+
+	/*
+	 * Configuring the number of stop bits
+	 */
+
+	tempreg |= (pUSARTHandle->USART_Config.USART_NoOfStopBits << USART_CR2_STOP);
+
+	pUSARTHandle->pUSARTx->CR2 = tempreg;
+
+	/*****************************************************************
+	 * 						Configuring CR3
+	 *****************************************************************/
+	tempreg = 0;
+	//Configuring USART Hardware Flow Control
+	if(pUSARTHandle->USART_Config.USART_HWFlowControl == USART_HW_FLOW_CTRL_CTS){
+		tempreg |= (1 << USART_CR3_CTSE);
+	}
+	else if(pUSARTHandle->USART_Config.USART_HWFlowControl == USART_HW_FLOW_CTRL_RTS){
+			tempreg |= (1 << USART_CR3_RTSE);
+	}
+	else if(pUSARTHandle->USART_Config.USART_HWFlowControl == USART_HW_FLOW_CTRL_CTS_RTS){
+			tempreg |= (1 << USART_CR3_CTSE);
+			tempreg |= (1 << USART_CR3_RTSE);
+	}
+	pUSARTHandle->pUSARTx->CR3 = tempreg;
+}
+
+/*****************************************************************
+ * @fn          - USART_DeInit
+ *
+ * @brief       - This function de-initialize USART peripherals
+ *
+ * @param[in]   - Base address of the USART peripheral
+ *
+ * @return      - None
+ *
+ * @Note        - None
+ *
+ *****************************************************************/
+void USART_DeInit(USART_RegDef_t *pUSARTx)
+{
+    if(pUSARTx == USART1)
+    {
+    	USART1_REG_RESET();
+    }
+    else if(pUSARTx == USART2)
+    {
+        USART2_REG_RESET();
+    }
+    else if(pUSARTx == USART3)
+    {
+        USART3_REG_RESET();
+    }
+    else if(pUSARTx == UART4)
+    {
+        UART4_REG_RESET();
+    }
+    else if(pUSARTx == UART5)
+    {
+        UART5_REG_RESET();
+    }
+    else if(pUSARTx == USART6)
+    {
+        USART6_REG_RESET();
+    }
+}
+
+
+
+
+/*********************************************************************
+ * @fn      		  - USART_PeriClockControl
+ *
+ * @brief             -	This function enables / disables the USART peripheral clock
+ *
+ * @param[in]         - *pUSARTx -
+ * @param[in]         - EnorDi - takes values either ENABLE or DISABLE
+ *
+ * @Note              -
+
+ */
+
+void USART_PeriClockControl(USART_RegDef_t *pUSARTx, uint8_t EnorDi){
+		if(EnorDi == ENABLE){
+			if(pUSARTx == USART1){
+						USART1_PCLK_EN();
+					}
+			if(pUSARTx == USART2){
+						USART2_PCLK_EN();
+					}
+			if(pUSARTx == USART3){
+						USART3_PCLK_EN();
+					}
+			if(pUSARTx == UART4){
+						UART4_PCLK_EN();
+					}
+			if(pUSARTx == UART5){
+						UART5_PCLK_EN();
+					}
+			if(pUSARTx == USART6){
+						USART6_PCLK_EN();
+					}
+		}
+
+		if(EnorDi == DISABLE){
+				if(pUSARTx == USART1){
+							USART1_PCLK_DI();
+						}
+				if(pUSARTx == USART2){
+							USART2_PCLK_DI();
+						}
+				if(pUSARTx == USART3){
+							USART3_PCLK_DI();
+						}
+				if(pUSARTx == UART4){
+							UART4_PCLK_DI();
+						}
+				if(pUSARTx == UART5){
+							UART5_PCLK_DI();
+						}
+				if(pUSARTx == USART6){
+							USART6_PCLK_DI();
+						}
+			}
+
+
+}
+
+/*********************************************************************
+ * @fn      		  - USART_SendData
+ *
+ * @brief             -	This function is used to send Data.
+ *
+ * @param[in]         - USART_Handle_t *pUSARTHandle,
+ * @param[in]         - uint8_t *pTxBuffer,
+ * @param[in]         - uint32_t Len
+ *
+ * @return            - void
+ *
+ * @Note              - Resolve all the TODOs
+
+ */
+void USART_SendData(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint32_t Len)
+{
+	uint16_t *pdata;
+   //Loop over until "Len" number of bytes are transferred
+	for(uint32_t i = 0 ; i < Len; i++)
+	{
+		//Implement the code to wait until TXE flag is set in the SR
+		while(!USART_GetFlagStatus(pUSARTHandle->pUSARTx,USART_SR_TXE));
+
+         //Check the USART_WordLength item for 9BIT or 8BIT in a frame
+		if(pUSARTHandle->USART_Config.USART_WordLength == USART_WORDLEN_9BITS)
+		{
+			//if 9BIT, load the DR with 2bytes masking the bits other than first 9 bits
+			pdata = (uint16_t*) pTxBuffer;
+			pUSARTHandle->pUSARTx->DR = (*pdata & (uint16_t)0x01FF);
+
+			//check for USART_ParityControl
+			if(pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_DISABLE)
+			{
+				//No parity is used in this transfer. so, 9bits of user data will be sent
+				//Implement the code to increment pTxBuffer twice
+				pTxBuffer++;
+				pTxBuffer++;
+			}
+			else
+			{
+				//Parity bit is used in this transfer . so , 8bits of user data will be sent
+				//The 9th bit will be replaced by parity bit by the hardware
+				pTxBuffer++;
+			}
+		}
+		else
+		{
+			//This is 8bit data transfer
+			pUSARTHandle->pUSARTx->DR = (*pTxBuffer  & (uint8_t)0xFF);
+
+			//Implement the code to increment the buffer address
+			pTxBuffer++;
+		}
+	}
+
+	//Implement the code to wait till TC flag is set in the SR
+	while(!USART_GetFlagStatus(pUSARTHandle->pUSARTx,USART_SR_TC));
+}
+
+uint8_t USART_GetFlagStatus(USART_RegDef_t *pUSARTx,uint32_t FlagName){
+	if(pUSARTx->SR & FlagName){
+		return FLAG_SET;
+	}
+	return FLAG_RESET;
+}
+

@@ -1,0 +1,13 @@
+/*
+ * stm32f446xx_I2C_drivers.h
+ *
+ *  Created on: Jul 15, 2024
+ *      Author: RShah23
+ */
+
+#ifndef INC_STM32F446XX_I2C_DRIVERS_H_
+#define INC_STM32F446XX_I2C_DRIVERS_H_
+
+
+
+#endif /* INC_STM32F446XX_I2C_DRIVERS_H_ */

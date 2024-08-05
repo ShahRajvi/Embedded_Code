@@ -1,0 +1,141 @@
+/*
+ * stm32f446xx_I2C_drivers.h
+ *
+ *  Created on: Jul 15, 2024
+ *      Author: RShah23
+ */
+
+#ifndef INC_STM32F446XX_I2C_DRIVERS_H_
+#define INC_STM32F446XX_I2C_DRIVERS_H_
+#include "stm32f446xx.h"
+
+typedef struct{
+	uint32_t 	I2C_SCLSpeed;
+	uint8_t 	I2C_DeviceAddress;
+	uint8_t 	I2C_ACKControl;
+	uint16_t 	I2C_FMDutyCycle;
+
+
+}I2C_Config_t;
+
+typedef struct{
+	I2C_RegDef_t *pI2Cx;
+	I2C_Config_t *I2C_Config;
+}I2C_Handle_t;
+
+/*
+ * Possible I2C Application states
+ */
+#define I2C_READY           0
+#define I2C_BUSY_IN_RX      1
+#define I2C_BUSY_IN_TX      2
+
+
+/*
+ * I2C_SCLSpeed
+ */
+
+#define I2C_SCL_SPEED_SM	100000 // Standard Mode
+#define	I2C_SCL_SPEED_FM2K	200000 // SCL Fast Mode: 200KHz
+#define	I2C_SCL_SPEED_FM4K	400000 // SCL Fast Mode: 400KHz
+
+/*
+ * @I2C_ACKControl
+ */
+
+#define I2C_ACK_DISABLE     0
+#define I2C_ACK_ENABLE      1
+
+/*
+ * @I2C_FMDutyCycle (In CCR register.
+ */
+#define I2C_FM_DUTY_2       0
+#define I2C_FM_DUTY_16_9    1
+
+
+
+
+/*
+ * I2C_SR1 FLAG definitions
+ */
+
+#define I2C_SR1_SB_FLAG				( 1<< I2C_SR1_SB)
+#define I2C_SR1_ADDR_FLAG			(1 << I2C_SR1_ADDR)
+#define I2C_SR1_BTF_FLAG			(1 << I2C_SR1_BTF)
+#define I2C_SR1_ADD10_FLAG			(1 << I2C_SR1_ADD10)
+#define I2C_SR1_STOPF_FLAG			(1 << I2C_SR1_STOPF)
+#define I2C_SR1_RXNE_FLAG			(1 << I2C_SR1_RXNE)
+#define I2C_SR1_TXE_FLAG			(1 << I2C_SR1_TXE)
+#define I2C_SR1_BERR_FLAG			(1 << I2C_SR1_BERR)
+#define I2C_SR1_ARLO_FLAG			(1 << I2C_SR1_ARLO)
+#define I2C_SR1_AF_FLAG				(1 << I2C_SR1_AF)
+#define I2C_SR1_OVR_FLAG			(1 << I2C_SR1_OVR)
+#define I2C_SR1_PECERR_FLAG			(1 << I2C_SR1_PECERR)
+#define I2C_SR1_TIMEOUT_FLAG		(1 << I2C_SR1_TIMEOUT)
+#define I2C_SR1_SMBALERT_FLAG		(1 << I2C_SR1_SMBALERT)
+
+
+/*
+ * I2C_SR2 FLAG definitions
+ */
+
+#define I2C_SR2_MSL_FLAG			(1 << I2C_SR2_MSL)
+#define I2C_SR2_BUSY_FLAG			(1 << I2C_SR2_BUSY)
+#define I2C_SR2_TRA_FLAG			(1 << I2C_SR2_TRA)
+#define I2C_SR2_GENCALL_FLAG		(1 << I2C_SR2_GENCALL)
+#define I2C_SR2_SMBDEFAULT_FLAG		(1 << I2C_SR2_SMBDEFAULT)
+#define I2C_SR2_SMBHOST_FLAG		(1 << I2C_SR2_SMBHOST)
+#define I2C_SR2_DUALF_FLAG			(1 << I2C_SR2_DUALF)
+#define I2C_SR2_PEC_FLAG			(1 << I2C_SR2_PEC)
+
+/****************************************************************
+ *
+ * API Function Definitions
+ *
+ ****************************************************************/
+
+/*
+ * Peripheral clock setup
+ */
+
+void I2C_PeriClockControl(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+
+
+/*
+ * I2C Init and De-init function definition
+ */
+
+void I2C_Init(I2C_Handle_t *pI2CHandle);
+void I2C_DeInit(I2C_RegDef_t *pI2Cx);
+
+/*
+ * Blocking and Non-blocking based APIs
+ */
+
+
+
+/*
+ * IRQ Configuration and ISR handling
+ */
+void I2C_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnOrDi);
+void I2C_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
+void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle, uint8_t App_Ev);
+
+/*
+ * Other Peripheral Control APIs
+ */
+uint8_t I2C_GetFlagStatus(I2C_RegDef_t *pI2Cx, uint32_t FlagName);
+uint32_t RCC_GetPCLK1Value(void);
+uint32_t RCC_GetPLLOutputClock(void);
+
+
+/*
+void I2C_Master_TX(void);
+void I2C_Master_RX(void);
+void I2C_Slave_TX(void);
+void I2C_Slave_RX(void);
+void I2C_Error_Interrupt_handling(void);
+void I2C_Event_Interrupt_handling(void);
+*/
+
+#endif /* INC_STM32F446XX_I2C_DRIVERS_H_ */

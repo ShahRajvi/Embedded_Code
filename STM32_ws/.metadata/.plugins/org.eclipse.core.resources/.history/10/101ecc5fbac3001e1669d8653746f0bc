@@ -1,0 +1,17 @@
+/*
+ * 001_LED_TOGGLE.c
+ *
+ *  Created on: Feb 4, 2024
+ *      Author: RShah23
+ */
+
+#include "stm32f446xx.h"
+#include "stm32f446xx_gpio__driver.h"
+
+int main(void)
+{
+	GPIO_Handle_t GPIOLed;
+	GPIOLed.pGPIOx = GPIOA;
+
+	return 0;
+}

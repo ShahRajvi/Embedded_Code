@@ -1,0 +1,21 @@
+/*
+ * stm32f446xx_SPI_driver.c
+ *
+ *  Created on: Jul 15, 2024
+ *      Author: RShah23
+ */
+
+
+/*********************************************************************
+ * @fn      		  - USART_Init
+ *
+ * @brief             -	This function is for peripheral clock setup
+ *
+ * @param[in]         - *pUSARTHandle
+ *
+ *
+ * @Note              -
+
+ */
+
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);

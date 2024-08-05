@@ -1,0 +1,8 @@
+../drivers/Src/stm32f446xx_USART_driver.c:26:6:USART_Init	24	static
+../drivers/Src/stm32f446xx_USART_driver.c:123:6:USART_DeInit	16	static
+../drivers/Src/stm32f446xx_USART_driver.c:168:6:USART_PeriClockControl	16	static
+../drivers/Src/stm32f446xx_USART_driver.c:228:6:USART_SendData	32	static
+../drivers/Src/stm32f446xx_USART_driver.c:273:9:USART_GetFlagStatus	16	static
+../drivers/Src/stm32f446xx_USART_driver.c:280:6:USART_ClearFlag	16	static
+../drivers/Src/stm32f446xx_USART_driver.c:299:6:USART_ReceiveData	32	static
+../drivers/Src/stm32f446xx_USART_driver.c:365:6:USART_SetBaudRate	40	static
