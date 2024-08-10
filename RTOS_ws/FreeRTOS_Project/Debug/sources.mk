@@ -32,4 +32,5 @@ ThirdParty/Segger/Config \
 ThirdParty/Segger/OS \
 ThirdParty/Segger/SEGGER \
 ThirdParty/Segger/SEGGER/Syscalls \
+ThirdParty/Segger/rec \
 
