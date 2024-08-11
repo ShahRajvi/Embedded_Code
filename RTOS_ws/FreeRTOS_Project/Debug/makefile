@@ -9,6 +9,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include ThirdParty/Segger/rec/subdir.mk
 -include ThirdParty/Segger/SEGGER/Syscalls/subdir.mk
 -include ThirdParty/Segger/SEGGER/subdir.mk
 -include ThirdParty/Segger/OS/subdir.mk

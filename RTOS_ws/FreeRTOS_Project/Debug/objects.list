@@ -36,3 +36,4 @@
 "./ThirdParty/Segger/SEGGER/SEGGER_RTT_printf.o"
 "./ThirdParty/Segger/SEGGER/SEGGER_SYSVIEW.o"
 "./ThirdParty/Segger/SEGGER/Syscalls/SEGGER_RTT_Syscalls_GCC.o"
+"./ThirdParty/Segger/rec/segger_uart.o"

@@ -1,0 +1,10 @@
+17:22:54 **** Incremental Build of configuration Debug for project LED_exercise ****
+make -j16 all 
+arm-none-eabi-size  LED_exercise.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23392	     24	  84496	 107912	  1a588	LED_exercise.elf
+Finished building: default.size.stdout
+ 
+
+17:22:54 Build Finished. 0 errors, 0 warnings. (took 332ms)
+
