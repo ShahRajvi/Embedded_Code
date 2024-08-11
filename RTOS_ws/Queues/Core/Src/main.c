@@ -59,6 +59,7 @@ QueueHandle_t q_print;
 
 //Software timer handles
 TimerHandle_t led_timer_handle[4];
+TimerHandle_t rtc_timer;
 //state variable
 state_t curr_state = sMainMenu;
 volatile uint8_t user_data;

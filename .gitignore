@@ -24,3 +24,4 @@ RTOS_ws/FreeRTOS_Project/Debug/Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 RTOS_ws/FreeRTOS_Project/Debug/FreeRTOS_Project.elf
 RTOS_ws/LED_exercise/.project
 /RTOS_ws/Notes
+*.log

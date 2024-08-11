@@ -74,10 +74,12 @@ extern QueueHandle_t q_data;
 extern QueueHandle_t q_print;
 
 extern TimerHandle_t led_timer_handle[4];
+extern TimerHandle_t rtc_timer;
 extern state_t curr_state;
 
 
 extern UART_HandleTypeDef huart2;
+extern RTC_HandleTypeDef hrtc;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -107,6 +109,13 @@ void LED_effect1();
 void LED_effect2();
 void LED_effect3();
 void LED_effect4();
+
+
+void show_time_date(void);
+uint8_t getnumber(uint8_t *p , int len);
+void rtc_configure_time(RTC_TimeTypeDef *time);
+void rtc_configure_date(RTC_DateTypeDef *date);
+int validate_rtc_information(RTC_TimeTypeDef *time, RTC_DateTypeDef *date);
 
 /* USER CODE END EFP */
 
