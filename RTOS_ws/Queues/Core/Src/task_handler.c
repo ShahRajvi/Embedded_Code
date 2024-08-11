@@ -62,14 +62,12 @@ void menu_task_handler(void* parameters){
 		else{
 			//invalid entry
 			xQueueSend(q_print, &inv_msg, portMAX_DELAY);
+			continue;
 		}
-		// Wait to run agian when som other task notifies
+		// Wait to run again when some other task notifies
 		xTaskNotifyWait(0, 0, NULL, portMAX_DELAY );
 	} // while super loop end
 }
-
-
-//state_t curr_state = sMainMenu;
 
 
 void cmd_task_handler(void* parameters){
@@ -116,16 +114,16 @@ int extract_command(command_t *cmd){
 
 void process_command(command_t *cmd){
 	// Extract the data bytes from the input data queue and create a command
-	BaseType_t ret;
+
 	extract_command(cmd);
 
 	switch(curr_state){
 	case sMainMenu:
-		ret = xTaskNotify(menu_task_handle, (uint32_t)cmd, eSetValueWithOverwrite);
+		xTaskNotify(menu_task_handle, (uint32_t)cmd, eSetValueWithOverwrite);
 		break;
 
 	case sLEDEffect:
-		ret = xTaskNotify(led_task_handle, (uint32_t)cmd, eSetValueWithOverwrite);
+		xTaskNotify(led_task_handle, (uint32_t)cmd, eSetValueWithOverwrite);
 		break;
 
 	case sRTCMenu:
@@ -135,20 +133,21 @@ void process_command(command_t *cmd){
 	case sRTCDateConfig:
 
 	case sRTCReport:
-		ret = xTaskNotify(rtc_task_handle, (uint32_t)cmd, eSetValueWithOverwrite);
+		xTaskNotify(rtc_task_handle, (uint32_t)cmd, eSetValueWithOverwrite);
 		break;
 	}
 }
 
 void print_task_handler(void* parameters){
-
+	uint32_t *msg;
 	while(1){
-
+		xQueueReceive(q_print, &msg, portMAX_DELAY);
+		HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen((char*)msg), HAL_MAX_DELAY);
 
 	}
 }
 /*
- * Toggle orange led on the board
+ * Displays LED Menu
  */
 void led_task_handler(void* parameters){
 	uint32_t cmd_addr;
@@ -191,14 +190,14 @@ void led_task_handler(void* parameters){
 			curr_state = sMainMenu;
 
 			/*Notify menu task */
-			xTaskNotify(handle_menu_task,0,eNoAction);
+			xTaskNotify(menu_task_handle,0,eNoAction);
 
 		}
 }
-/*
- * Toggle red led on the board.
- */
 
+/*
+ * Displays RTC Task Menu
+ */
 void rtc_task_handler(void* parameters){
 	TickType_t last_wakeup_time;
 	last_wakeup_time = xTaskGetTickCount();

@@ -39,7 +39,8 @@ Core/Src/stm32f4xx_hal_msp.o: ../Core/Src/stm32f4xx_hal_msp.c \
  C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/task.h \
  C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/list.h \
  C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/queue.h \
- C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/task.h
+ C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/task.h \
+ C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/timers.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -82,3 +83,4 @@ C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/Third
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/list.h:
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/queue.h:
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/task.h:
+C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include/timers.h:

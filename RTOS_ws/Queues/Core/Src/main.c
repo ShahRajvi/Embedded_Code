@@ -57,8 +57,8 @@ TaskHandle_t rtc_task_handle;
 QueueHandle_t q_data;
 QueueHandle_t q_print;
 
-//
-
+//Software timer handles
+TimerHandle_t led_timer_handle[4];
 //state variable
 state_t curr_state = sMainMenu;
 volatile uint8_t user_data;
@@ -150,9 +150,16 @@ int main(void)
   q_print = xQueueCreate(10, sizeof(size_t));
   configASSERT(q_print != NULL);
 
+  /* Create software timer for LED effects */
+
+
+  for(int i = 0; i < 4; i++){
+	  led_timer_handle[i] = xTimerCreate("led_timer", pdMS_TO_TICKS(500), pdTRUE, (void *)(i+1), fn_led_effect_callback);
+  }
+
 
   // Enable uart receive interrupt
-  HAL_UART_Receive_IT(&huart2, &user_data, 1);
+  HAL_UART_Receive_IT(&huart2, (uint8_t*) &user_data, 1);
 
   // start FreeRTOS scheduler
   vTaskStartScheduler();
@@ -361,6 +368,26 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	 HAL_UART_Receive_IT(&huart2, (uint8_t*)&user_data, 1);
 }
 
+void fn_led_effect_callback(TimerHandle_t xTimer){
+	int id;
+	id = (uint32_t)pvTimerGetTimerID(xTimer);
+
+	switch(id){
+	case 1:
+		LED_effect1();
+		break;
+	case 2:
+		LED_effect2();
+		break;
+	case 3:
+		LED_effect3();
+		break;
+	case 4:
+		LED_effect4();
+		break;
+	}
+
+}
 
 /* USER CODE END 4 */
 

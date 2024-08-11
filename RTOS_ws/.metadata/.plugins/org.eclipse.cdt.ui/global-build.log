@@ -1,19 +1,29 @@
-10:04:54 **** Incremental Build of configuration Debug for project Queues ****
+11:10:24 **** Incremental Build of configuration Debug for project Queues ****
 make -j16 all 
-arm-none-eabi-gcc "C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/Config" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/OS" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/SEGGER" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"common/ThirdParty/FreeRTOS/tasks.d" -MT"common/ThirdParty/FreeRTOS/tasks.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "common/ThirdParty/FreeRTOS/tasks.o"
-C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c: In function 'vTaskPrioritySet':
-C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:1644:41: warning: implicit declaration of function 'prvReaddTaskToReadyList'; did you mean 'prvAddTaskToReadyList'? [-Wimplicit-function-declaration]
- 1644 |                                         prvReaddTaskToReadyList( pxTCB );
-      |                                         ^~~~~~~~~~~~~~~~~~~~~~~
-      |                                         prvAddTaskToReadyList
+arm-none-eabi-gcc "../Core/Src/led_effect.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/Config" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/OS" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/SEGGER" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led_effect.d" -MT"Core/Src/led_effect.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/led_effect.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/Config" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/OS" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/SEGGER" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Queues.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\rajvi\OneDrive\Documents\00_Projects\Embedded_Code\RTOS_ws\Queues\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Queues.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Queues.elf
  
 arm-none-eabi-size  Queues.elf 
 arm-none-eabi-objdump -h -S Queues.elf  > "Queues.list"
    text	   data	    bss	    dec	    hex	filename
-  29436	     20	  78996	 108452	  1a7a4	Queues.elf
+  31336	     20	  79012	 110368	  1af20	Queues.elf
 Finished building: default.size.stdout
  
 Finished building: Queues.list
+ 
+11:10:58 **** Incremental Build of configuration Debug for project Queues ****
+make -j16 all 
+arm-none-eabi-size  Queues.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31336	     20	  79012	 110368	  1af20	Queues.elf
+Finished building: default.size.stdout
+ 
+11:12:56 **** Incremental Build of configuration Debug for project Queues ****
+make -j16 all 
+arm-none-eabi-size  Queues.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31336	     20	  79012	 110368	  1af20	Queues.elf
+Finished building: default.size.stdout
  
