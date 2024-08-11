@@ -46,7 +46,7 @@ C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/Third
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:4013:13:prvResetNextTaskUnblockTime	4	static
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:4036:18:xTaskGetCurrentTaskHandle	16	static
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:4053:16:xTaskGetSchedulerState	16	static
-C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:4081:16:xTaskPriorityInherit	32	static
+C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:4081:16:xTaskPriorityInherit	24	static
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:4171:16:xTaskPriorityDisinherit	40	static,ignoring_inline_asm
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:4251:10:vTaskPriorityDisinheritAfterTimeout	48	static,ignoring_inline_asm
 C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:4672:12:uxTaskResetEventItemValue	16	static

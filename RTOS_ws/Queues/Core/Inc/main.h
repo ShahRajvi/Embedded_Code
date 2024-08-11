@@ -95,6 +95,11 @@ void cmd_task_handler(void* parameters);
 void print_task_handler(void* parameters);
 void led_task_handler(void* parameters);
 void rtc_task_handler(void* parameters);
+
+void led_effect_stop(void);
+void led_effect(int n );
+
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

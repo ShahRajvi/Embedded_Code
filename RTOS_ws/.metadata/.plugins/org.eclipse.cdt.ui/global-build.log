@@ -1,21 +1,19 @@
-17:47:11 **** Incremental Build of configuration Debug for project FreeRTOS_Project ****
+10:04:54 **** Incremental Build of configuration Debug for project Queues ****
 make -j16 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/FreeRTOS_Project/ThirdParty/Segger/Config" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/FreeRTOS_Project/ThirdParty/Segger/OS" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/FreeRTOS_Project/ThirdParty/Segger/SEGGER" -I../Core/Inc -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/FreeRTOS_Project/ThirdParty/FreeRTOS" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/FreeRTOS_Project/ThirdParty/FreeRTOS/include" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/FreeRTOS_Project/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "FreeRTOS_Project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\rajvi\OneDrive\Documents\00_Projects\Embedded_Code\RTOS_ws\FreeRTOS_Project\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: FreeRTOS_Project.elf
+arm-none-eabi-gcc "C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/include" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/Config" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/OS" -I"C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/Segger/SEGGER" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"common/ThirdParty/FreeRTOS/tasks.d" -MT"common/ThirdParty/FreeRTOS/tasks.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "common/ThirdParty/FreeRTOS/tasks.o"
+C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c: In function 'vTaskPrioritySet':
+C:/Users/rajvi/OneDrive/Documents/00_Projects/Embedded_Code/RTOS_ws/common/ThirdParty/FreeRTOS/tasks.c:1644:41: warning: implicit declaration of function 'prvReaddTaskToReadyList'; did you mean 'prvAddTaskToReadyList'? [-Wimplicit-function-declaration]
+ 1644 |                                         prvReaddTaskToReadyList( pxTCB );
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                         prvAddTaskToReadyList
+arm-none-eabi-gcc -o "Queues.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\rajvi\OneDrive\Documents\00_Projects\Embedded_Code\RTOS_ws\Queues\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Queues.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Queues.elf
  
-arm-none-eabi-size  FreeRTOS_Project.elf 
-arm-none-eabi-objdump -h -S FreeRTOS_Project.elf  > "FreeRTOS_Project.list"
+arm-none-eabi-size  Queues.elf 
+arm-none-eabi-objdump -h -S Queues.elf  > "Queues.list"
    text	   data	    bss	    dec	    hex	filename
-  32244	    108	  84956	 117308	  1ca3c	FreeRTOS_Project.elf
+  29436	     20	  78996	 108452	  1a7a4	Queues.elf
 Finished building: default.size.stdout
  
-Finished building: FreeRTOS_Project.list
- 
-17:47:18 **** Incremental Build of configuration Debug for project FreeRTOS_Project ****
-make -j16 all 
-arm-none-eabi-size  FreeRTOS_Project.elf 
-   text	   data	    bss	    dec	    hex	filename
-  32244	    108	  84956	 117308	  1ca3c	FreeRTOS_Project.elf
-Finished building: default.size.stdout
+Finished building: Queues.list
  

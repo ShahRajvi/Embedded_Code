@@ -4052,7 +4052,7 @@ Discarded input sections
  .text.uxTaskPriorityGetFromISR
                 0x00000000       0x58 ./common/ThirdParty/FreeRTOS/tasks.o
  .text.vTaskPrioritySet
-                0x00000000      0x1a8 ./common/ThirdParty/FreeRTOS/tasks.o
+                0x00000000      0x12c ./common/ThirdParty/FreeRTOS/tasks.o
  .text.vTaskSuspend
                 0x00000000      0x140 ./common/ThirdParty/FreeRTOS/tasks.o
  .text.prvTaskIsTaskSuspended
@@ -4092,7 +4092,7 @@ Discarded input sections
  .text.xTaskGetCurrentTaskHandle
                 0x00000000       0x20 ./common/ThirdParty/FreeRTOS/tasks.o
  .text.xTaskPriorityInherit
-                0x00000000      0x13c ./common/ThirdParty/FreeRTOS/tasks.o
+                0x00000000       0xc4 ./common/ThirdParty/FreeRTOS/tasks.o
  .text.vTaskPriorityDisinheritAfterTimeout
                 0x00000000      0x174 ./common/ThirdParty/FreeRTOS/tasks.o
  .text.uxTaskResetEventItemValue
@@ -5562,7 +5562,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x00000000    0x15380
+.debug_info     0x00000000    0x1538b
  .debug_info    0x00000000     0x1760 ./Core/Src/main.o
  .debug_info    0x00001760     0x1125 ./Core/Src/stm32f4xx_hal_msp.o
  .debug_info    0x00002885      0xc44 ./Core/Src/stm32f4xx_hal_timebase_tim.o
@@ -5582,12 +5582,12 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_info    0x0000cc39     0x2f4f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
  .debug_info    0x0000fb88      0x2af ./common/ThirdParty/FreeRTOS/list.o
  .debug_info    0x0000fe37     0x184f ./common/ThirdParty/FreeRTOS/queue.o
- .debug_info    0x00011686     0x2435 ./common/ThirdParty/FreeRTOS/tasks.o
- .debug_info    0x00013abb      0xe20 ./common/ThirdParty/FreeRTOS/timers.o
- .debug_info    0x000148db      0x582 ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
- .debug_info    0x00014e5d      0x523 ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_info    0x00011686     0x2440 ./common/ThirdParty/FreeRTOS/tasks.o
+ .debug_info    0x00013ac6      0xe20 ./common/ThirdParty/FreeRTOS/timers.o
+ .debug_info    0x000148e6      0x582 ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
+ .debug_info    0x00014e68      0x523 ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
 
-.debug_abbrev   0x00000000     0x3320
+.debug_abbrev   0x00000000     0x3351
  .debug_abbrev  0x00000000      0x35a ./Core/Src/main.o
  .debug_abbrev  0x0000035a      0x210 ./Core/Src/stm32f4xx_hal_msp.o
  .debug_abbrev  0x0000056a      0x1f4 ./Core/Src/stm32f4xx_hal_timebase_tim.o
@@ -5607,10 +5607,10 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_abbrev  0x00002101      0x30e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
  .debug_abbrev  0x0000240f       0xf5 ./common/ThirdParty/FreeRTOS/list.o
  .debug_abbrev  0x00002504      0x323 ./common/ThirdParty/FreeRTOS/queue.o
- .debug_abbrev  0x00002827      0x37e ./common/ThirdParty/FreeRTOS/tasks.o
- .debug_abbrev  0x00002ba5      0x2cb ./common/ThirdParty/FreeRTOS/timers.o
- .debug_abbrev  0x00002e70      0x25a ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
- .debug_abbrev  0x000030ca      0x256 ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_abbrev  0x00002827      0x3af ./common/ThirdParty/FreeRTOS/tasks.o
+ .debug_abbrev  0x00002bd6      0x2cb ./common/ThirdParty/FreeRTOS/timers.o
+ .debug_abbrev  0x00002ea1      0x25a ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
+ .debug_abbrev  0x000030fb      0x256 ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
 
 .debug_aranges  0x00000000     0x1320
  .debug_aranges
@@ -5809,7 +5809,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x000239b8      0x1a7 ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
  .debug_macro   0x00023b5f      0x219 ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
 
-.debug_line     0x00000000    0x181a9
+.debug_line     0x00000000    0x181a5
  .debug_line    0x00000000      0xcb6 ./Core/Src/main.o
  .debug_line    0x00000cb6      0xb17 ./Core/Src/stm32f4xx_hal_msp.o
  .debug_line    0x000017cd      0x7fb ./Core/Src/stm32f4xx_hal_timebase_tim.o
@@ -5829,12 +5829,12 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x0000f8c3     0x293f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
  .debug_line    0x00012202      0x838 ./common/ThirdParty/FreeRTOS/list.o
  .debug_line    0x00012a3a     0x1744 ./common/ThirdParty/FreeRTOS/queue.o
- .debug_line    0x0001417e     0x1ebe ./common/ThirdParty/FreeRTOS/tasks.o
- .debug_line    0x0001603c      0xd7f ./common/ThirdParty/FreeRTOS/timers.o
- .debug_line    0x00016dbb      0x935 ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
- .debug_line    0x000176f0      0xab9 ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_line    0x0001417e     0x1eba ./common/ThirdParty/FreeRTOS/tasks.o
+ .debug_line    0x00016038      0xd7f ./common/ThirdParty/FreeRTOS/timers.o
+ .debug_line    0x00016db7      0x935 ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
+ .debug_line    0x000176ec      0xab9 ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
 
-.debug_str      0x00000000    0xe0211
+.debug_str      0x00000000    0xe0229
  .debug_str     0x00000000    0xd8c15 ./Core/Src/main.o
                               0xd8fe5 (size before relaxing)
  .debug_str     0x000d8c15      0x765 ./Core/Src/stm32f4xx_hal_msp.o
@@ -5873,13 +5873,13 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                                0xb2df (size before relaxing)
  .debug_str     0x000dc775      0xc54 ./common/ThirdParty/FreeRTOS/queue.o
                                0xd9de (size before relaxing)
- .debug_str     0x000dd3c9     0x1a6b ./common/ThirdParty/FreeRTOS/tasks.o
-                               0xe407 (size before relaxing)
- .debug_str     0x000dee34      0x58c ./common/ThirdParty/FreeRTOS/timers.o
+ .debug_str     0x000dd3c9     0x1a83 ./common/ThirdParty/FreeRTOS/tasks.o
+                               0xe41f (size before relaxing)
+ .debug_str     0x000dee4c      0x58c ./common/ThirdParty/FreeRTOS/timers.o
                                0xdb5e (size before relaxing)
- .debug_str     0x000df3c0      0x832 ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
+ .debug_str     0x000df3d8      0x832 ./common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o
                                0x9b3a (size before relaxing)
- .debug_str     0x000dfbf2      0x61f ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
+ .debug_str     0x000dfc0a      0x61f ./common/ThirdParty/FreeRTOS/portable/MemMang/heap_4.o
                                0xcb09 (size before relaxing)
 
 .comment        0x00000000       0x43

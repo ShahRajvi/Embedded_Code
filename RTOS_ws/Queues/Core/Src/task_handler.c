@@ -151,12 +151,49 @@ void print_task_handler(void* parameters){
  * Toggle orange led on the board
  */
 void led_task_handler(void* parameters){
-	TickType_t last_wakeup_time;
-	last_wakeup_time = xTaskGetTickCount();
-	while(1){
+	uint32_t cmd_addr;
+		command_t *cmd;
+		const char* msg_led = "========================\n"
+							  "|      LED Effect     |\n"
+							  "========================\n"
+							  "(none,e1,e2,e3,e4)\n"
+							  "Enter your choice here : ";
+		const char* inv_msg = "Invalid Message \n";
+		while(1){
+			/*Wait for notification (Notify wait) */
+			xTaskNotifyWait(0,0,NULL,portMAX_DELAY);
 
-		vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(1000)); // Making all our tasks periodic
-	}
+			/*Print LED menu */
+			xQueueSend(q_print,&msg_led,portMAX_DELAY);
+
+			/*wait for LED command (Notify wait) */
+			xTaskNotifyWait(0,0,&cmd_addr,portMAX_DELAY);
+			cmd = (command_t*)cmd_addr;
+
+			if(cmd->len <= 4)
+			{
+				if(! strcmp((char*)cmd->payload,"none"))
+					led_effect_stop();
+				else if (! strcmp((char*)cmd->payload,"e1"))
+					led_effect(1);
+				else if (! strcmp((char*)cmd->payload,"e2"))
+					led_effect(2);
+				else if (! strcmp((char*)cmd->payload,"e3"))
+					led_effect(3);
+				else if (! strcmp((char*)cmd->payload,"e4"))
+					led_effect(4);
+				else
+					xQueueSend(q_print,&inv_msg,portMAX_DELAY); /*print invalid message */
+			}else
+				xQueueSend(q_print,&inv_msg,portMAX_DELAY);
+
+			/* update state variable */
+			curr_state = sMainMenu;
+
+			/*Notify menu task */
+			xTaskNotify(handle_menu_task,0,eNoAction);
+
+		}
 }
 /*
  * Toggle red led on the board.
